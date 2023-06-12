@@ -8,7 +8,7 @@ import {AiFillUnlock} from 'react-icons/ai'
 
 const LoginPatientDiv = () => {
   return (
-    <div className='searchDiv grid rounded-[10px] justify-center'>
+    <div className='searchDiv mt-[6rem]  grid rounded-[10px] justify-center'>
         <div className='rounded-[10px] p-[3rem] w-[100%]'>
             <form action="border-[1px] border-blueColor ">
 

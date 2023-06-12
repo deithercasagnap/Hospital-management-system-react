@@ -19,7 +19,7 @@ const Footer = () => {
 
     <>
 
-      <div className='footer bg-blueColor  items-center justify-center mt-[6rem]' >
+      <div id='contactus' className='footer bg-blueColor  items-center justify-center mt-[6rem]' >
 
         <div className="flex bg-blueColor items-center justify-between p-3">
           <span className="ms-[2rem] text-white items-center text-[30px] font-bold  hover:text-white">Be connected with us to ensure your safety!</span>
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className='footer flex bg-white grid grid-cols-2  items-center justify-center'>
+        <div className='footer bg-white grid grid-cols-2  items-center justify-center'>
           <div className=" bg-white mt-10">
             <div className="logoDiv  bg-white">
               <div className='flex items-center justify-center  bg-white'>
@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
 
 
-          <div className='flex bg-white rounded-[10px] grid grid-cols-3 items-start' >
+          <div className=' bg-white rounded-[10px] grid grid-cols-3 items-start' >
 
             <div className='grid '>
               <span className='divTitle text-[18px] font-semibold pb-[1.5rem] text-textColor'>

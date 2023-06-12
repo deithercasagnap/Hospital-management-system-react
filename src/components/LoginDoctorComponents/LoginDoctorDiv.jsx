@@ -1,6 +1,10 @@
 import React from 'react'
 import "./LoginDoctorStyle.css"
-import { Link } from 'react-router-dom';
+
+import { useState } from 'react';
+import Link from '@mui/material/Link';
+import { useNavigate } from 'react-router';
+import doPost from '../../helpers/fetch_helper.js';
 
 // imported icons from react-icons ===>
 import {AiOutlineUser} from 'react-icons/ai'
@@ -8,21 +12,43 @@ import {AiFillUnlock} from 'react-icons/ai'
 
 const LoginDoctorDiv = () => {
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (event) => {
+    try {
+      event.preventDefault();
+      setIsLoading(true);
+      const data = {
+        username,
+        password
+      }
+
+      let result = await doPost("http://localhost/backend/login.php", data);
+      
+      if (result.data.status) {
+        navigate('/homedoctor');
+      } else {
+        alert(result.data.message);
+      }
+
+    } catch (e) {
+      alert(e.toString());
+    } finally {
+      setIsLoading(false);
+    }
+
+  }
 
   return (
 
-    <React.Fragment>
-        <div className='searchDiv grid rounded-[10px] justify-center'>
+
+
+        <div className='searchDiv mt-[6rem] grid rounded-[10px] justify-center'>
             <div className='rounded-[10px] p-[3rem] w-[100%]'>
-                <form action="border-[1px] border-blueColor ">
+                <form onSubmit={handleSubmit} noValidate>
 
                     <div className='firstDiv rounded-[8px] bg-white p-5 shadow-lg shadow-greyIsh-700 border-[1px] border-greenColor'>
 
@@ -31,13 +57,29 @@ const LoginDoctorDiv = () => {
 
                         <div className='flex gap-2 items-center m-4'>
                             <AiOutlineUser className='text-[25px] text-textColor icon'/>
-                            <input type="text" className='bg-transparent text-textColor focus:outline-none w-[100%] border-[1px] border-greenColor p-[10px] rounded-[10px]' placeholder='Doctor Number'/>
+                            <input 
+                                id="email" 
+                                name='email' 
+                                type="text" 
+                                className='bg-transparent text-textColor focus:outline-none w-[100%] border-[1px] border-greenColor p-[10px] rounded-[10px]' 
+                                placeholder='Doctor Number'
+                                value={username}
+                                onChange={(ev) => setUsername(ev.target.value)} 
+                            />
                         </div>
                         
                         <div className='flex gap-2 items-center m-4'>
                         
                             <AiFillUnlock className='text-[25px] text-textColor icon'/>
-                            <input type="password" className='bg-transparent text-textColor focus:outline-none w-[100%] border-[1px] border-greenColor p-[10px] rounded-[10px]' placeholder='Password'/>
+                            <input 
+                                type="password" 
+                                className='bg-transparent text-textColor focus:outline-none w-[100%] border-[1px] border-greenColor p-[10px] rounded-[10px]' 
+                                placeholder='Password'
+                                name="password"
+                                id="password"
+                                value={password}
+                                onChange={(ev) => setPassword(ev.target.value)}
+                            />
                         
                         </div>
 
@@ -46,7 +88,15 @@ const LoginDoctorDiv = () => {
                         </div>
 
                         <div className='flex justify-center'>
-                            <button className="justify-center bg-blueColor h-full w-[50%] mt-5 mb-5 pt-3 pb-3 rounded-[10px] text-white cursor-pointer hover:bg-blue-300" onClick={handleClose}><Link to={"/homedoctor"}>LOGIN</Link></button>
+                            <button
+                                type="submit"
+                                className='justify-center text-center bg-blueColor h-full w-[50%] mt-5 mb-5 pt-3 pb-3 rounded-[10px] text-white cursor-pointer hover:bg-blue-500'
+                                loading={isLoading}
+                                >
+                                LOGIN
+
+                            </button>
+              
                         </div>
 
                     </div>
@@ -62,7 +112,6 @@ const LoginDoctorDiv = () => {
             </div>
             
         </div>
-    </React.Fragment>
   )
 }
 

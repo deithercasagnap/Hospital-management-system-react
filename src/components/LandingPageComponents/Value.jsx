@@ -15,13 +15,13 @@ const Value = () => {
 
     <>
 
-      <div className='mb-[4rem] mt-[1rem] '>
+      <div id='ourteam' className='mb-[4rem] mt-[1rem] '>
 
         <h1 className='text-greenColor text-[30px] py-[2rem] pb-[10px] w-[400px] block ms-8'>
           OUR TEAM
         </h1>
 
-        <p className='block text-[16px] text-textColor opacity-[.7] font-semibold ms-[2rem] me-[2rem] mt-3'>
+        <p className='block text-[16px] text-textColor font-semibold ms-[2rem] me-[2rem] mt-3'>
           Meet the four diligent and driven students embarked on a remarkable journey to develop a groundbreaking hospital management system. Their unwavering determination and tireless efforts led them on a path of innovation and collaboration.
         </p>
         
@@ -41,7 +41,7 @@ const Value = () => {
               CEO-FOUNDER
             </span>
 
-            <p className='block text-[13px] text-textColor opacity-[.7] py-[1rem] font-semibold '>
+            <p className='block text-[13px] text-textColor py-[1rem] font-semibold '>
               Description Here: Things being made beautiful simple are at the heart of everything we do.
             </p>
 
@@ -68,7 +68,7 @@ const Value = () => {
             CEO-FOUNDER
           </span>
 
-          <p className='block text-[13px] text-textColor opacity-[.7] py-[1rem] font-semibold '>
+          <p className='block text-[13px] text-textColor py-[1rem] font-semibold '>
             Description Here: Things being made beautiful simple are at the heart of everything we do.
           </p>
 
@@ -79,9 +79,9 @@ const Value = () => {
         
           </div>
 
-        </div>
+          </div>
 
-        <div className='singleGrid text-center justify-center rounded-[10px] hover:bg-[#f7edf5] p-[5px] border-[1px] border-greenColor'>
+          <div className='singleGrid text-center justify-center rounded-[10px] hover:bg-[#f7edf5] p-[5px] border-[1px] border-greenColor'>
           
             <div className='flex justify-center'> 
               <img src={logo1} alt="" className=' border-[1px] border-greenColor rounded-full items-center h-[150px] w-[150px]'/>
@@ -95,7 +95,7 @@ const Value = () => {
               CEO-FOUNDER
             </span>
 
-            <p className='block text-[13px] text-textColor opacity-[.7] py-[1rem] font-semibold '>
+            <p className='block text-[13px] text-textColor py-[1rem] font-semibold '>
               Description Here: Things being made beautiful simple are at the heart of everything we do.
             </p>
 
@@ -122,7 +122,7 @@ const Value = () => {
               CEO-FOUNDER
             </span>
 
-            <p className='block text-[13px] text-textColor opacity-[.7] py-[1rem] font-semibold '>
+            <p className='block text-[13px] text-textColor py-[1rem] font-semibold '>
               Description Here: Things being made beautiful simple are at the heart of everything we do.
             </p>
 

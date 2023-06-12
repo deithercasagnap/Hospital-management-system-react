@@ -18,7 +18,7 @@ const AboutUs = () => {
     <>
 
   
-      <div className='mb-[4rem] mt-[2rem] '>
+      <div id='aboutus' className='mb-[4rem] mt-[2rem] '>
 
 
 
@@ -31,7 +31,7 @@ const AboutUs = () => {
         </h6>
 
         <div className='grid gap-4 grid-cols-2 text-end leading-10 items-center ms-[80px] '>
-          <span className='block text-[16px] text-textColor opacity-[.7] font-semibold ms-[2rem] me-[2rem] mt-3'>
+          <span className=' text-[16px] text-textColor font-semibold ms-[2rem] me-[2rem] mt-3'>
             Due to the COVID-19 pandemic and the mandatory lockdown measures, the Information Technology Students at the University of Science & Technology of Southern Philippines has implemented an online hospital management system. This initiative involves healthcare professionals who will provide assistance to any patients regarding their health issues. Through this system, individuals from anywhere can securely access their medical histories and seek appointments, ensuring a fast and hassle-free transaction.
           </span>
 

@@ -93,7 +93,7 @@ const Jobs = () => {
     
     <>
 
-      <div>
+      <div id='job' className='mt-[6rem]'>
 
         <div className=' flex bg-white pt-[2rem] text-center justify-center'>
 

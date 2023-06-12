@@ -7,7 +7,7 @@ import {HashLink as Link} from 'react-router-hash-link'
 import logo1 from '../../assets/logo1.jpg'
 
 
-const NavBar = () => {
+const NavBar2 = () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -35,9 +35,6 @@ const NavBar = () => {
 
         <div className="menu items-center flex gap-8 me-20  bg-white"> 
             <li className="menuList text-[#6f6f6f] hover:text-blueColor"><Link to='/' smooth>Home</Link></li>
-            <li className="menuList text-[#6f6f6f] hover:text-blueColor"><Link to='#aboutus' smooth >About Us</Link></li>
-            <li className="menuList text-[#6f6f6f] hover:text-blueColor"><Link to='#ourteam' smooth>Our Team</Link></li>
-            <li className="menuList text-[#6f6f6f] hover:text-blueColor"><Link to='#contactus' smooth>Contact Us</Link></li>
 
             <div class="dropdown">
               <button class="dropbtn">Login</button>
@@ -54,4 +51,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default NavBar2
